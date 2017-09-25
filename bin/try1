@@ -1,0 +1,100 @@
+private class Leg {
+        /** The distal joint of this leg. */
+        private final Component distalJoint;
+        /** The middle joint of this leg. */
+        private final Component middleJoint;
+        /** The body joint of this leg. */
+        private final Component bodyJoint;  
+        /** The list of all the joints in this leg. */
+        private final List<Component> joints;
+        
+    /**
+     * Instantiates this leg with the three specified joints.
+     * 
+     * @param bodyJoint
+     *          The body joint of this leg.
+     * @param middleJoint
+     *          The middle joint of this leg.
+     * @param distalJoint
+     *          The distal joint of this leg.
+     */ 
+        
+     public Leg(final Component bodyJoint, final Component middleJoint,
+        final Component distalJoint) {
+      this.bodyJoint = bodyJoint;
+      this.middleJoint = middleJoint;
+      this.distalJoint = distalJoint;
+      this.joints = Collections.unmodifiableList(Arrays.asList(this.bodyJoint,
+          this.middleJoint, this.distalJoint));
+          } 
+          
+
+    /**
+     * Gets an unmodifiable view of the list of the joints of this leg.
+     * 
+     * @return An unmodifiable view of the list of the joints of this leg.
+     */
+    List<Component> joints() {
+      return this.joints;
+    }
+    
+       /**
+     * Gets the distal joint of this leg.
+     * 
+     * @return The distal joint of this leg.
+     */
+    Component distalJoint() {
+      return this.distalJoint;
+    }
+
+    /**
+     * Gets the middle joint of this leg.
+     * 
+     * @return The middle joint of this leg.
+     */
+    Component middleJoint() {
+      return this.middleJoint;
+    }
+
+    /**
+     * Gets the body joint of this leg.
+     * 
+     * @return The body joint of this leg.
+     */
+    Component bodyJoint() {
+      return this.bodyJoint;
+    }
+  }
+  
+    /** The default width of the created window. */
+  public static final int DEFAULT_WINDOW_HEIGHT = 512;
+  /** The default height of the created window. */
+  public static final int DEFAULT_WINDOW_WIDTH = 512;
+  
+    /** The color for components which are selected for rotation. */
+  public static final FloatColor ACTIVE_COLOR = FloatColor.BLUE;
+  
+  
+
+  /** The height of the distal joint on each of the legs. */
+  public static final double DISTAL_JOINT_HEIGHT = 0.2;
+  /** The radius of each joint which comprises the leg. */
+  public static final double LEG_RADIUS = 0.09;
+  /** The height of the body. */
+  
+  public static final double BODY_HEIGHT = 0.75;
+  /** The radius of the head. */
+  public static final double HEAD_RADIUS = 0.5;
+  /** The color for components which are not selected for rotation. */
+  public static final FloatColor INACTIVE_COLOR = FloatColor.ORANGE;
+  /** The initial position of the top level component in the scene. */
+  
+  public static final Point3D INITIAL_POSITION = new Point3D(2, 0, 2);
+  /** The height of the middle joint on each of the fingers. */
+  public static final double MIDDLE_JOINT_HEIGHT = 0.25;
+  /** The height of the body joint on each of the fingers. */
+  public static final double BODY_JOINT_HEIGHT = 0.25;
+  /** The angle by which to rotate the joint on user request to rotate. */
+  public static final double ROTATION_ANGLE = 2.0;
+
+
